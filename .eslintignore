@@ -1,0 +1,49 @@
+# Node modules
+node_modules/
+
+# Build output
+android/
+ios/
+build/
+dist/
+
+# Babel cache
+babel-cache/
+
+# Metro / React Native cache
+*.log
+*.tmp
+.expo/
+.expo-shared/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Jest
+coverage/
+
+# Config files (если они не в tsconfig и могут вызывать ошибки)
+
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Env
+.env*
+
+# Project
+ci/
+deeplinking/
+distribution/
+patches/
+push-notifications/
+scripts/
+modules/**/ios/
+modules/**/android/
+modules/react-native-editor/src/AztecView.js
+modules/react-native-editor/react-native.config.js
