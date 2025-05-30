@@ -1,6 +1,6 @@
 // @ts-expect-error - auto-ts-ignore
 
-import CryptoJs from 'crypto-js';
+// import CryptoJs from 'crypto-js';
 
 import { dateService } from '../services/date/date.service';
 
@@ -37,12 +37,10 @@ const getConfusingRequestUrl = (requestUrl: string): string => {
 };
 
 export const getRequestPropAndDateHashSum = <T extends object>(requestUrl: string, data?: T) => {
-    const dataConcat = concatObjectParams(data);
-    const confusingRequestUrl = getConfusingRequestUrl(requestUrl);
+    // const dataConcat = concatObjectParams(data);
+    // const confusingRequestUrl = getConfusingRequestUrl(requestUrl);
 
-    const dateStr = dateService().utc().format('YYYY-MM-DD HH:mm');
+    // const dateStr = dateService().utc().format('YYYY-MM-DD HH:mm');
 
-    return CryptoJs.MD5(
-        CryptoJs.SHA512(dataConcat).concat(CryptoJs.SHA512(confusingRequestUrl)).concat(CryptoJs.SHA512(dateStr)),
-    ).toString(CryptoJs.enc.Base64);
+    return '';
 };

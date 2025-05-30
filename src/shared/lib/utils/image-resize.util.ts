@@ -1,4 +1,4 @@
-import ImageResizer, { type ResizeFormat } from '@bam.tech/react-native-image-resizer';
+// import ImageResizer, { type ResizeFormat } from '@bam.tech/react-native-image-resizer';
 
 import { type Attachment } from '@/shared/api/types/attachments.types';
 import { UPLOAD_MAX_WIDTH } from '@/shared/lib/utils/avatar-url/image-upload.constants';
@@ -25,7 +25,15 @@ export const imageResize = async ({ format, image, quality }: Params) => {
 
     const { height, width } = createImageSize(image.width, image.height, UPLOAD_MAX_WIDTH);
 
-    const resizedImage = await ImageResizer.createResizedImage(image.path, width, height, format, quality);
+    // Stub for ImageResizer.createResizedImage
+    const resizedImage = {
+        path: image.path,
+        uri: image.path,
+        width,
+        height,
+        size: width * height,
+        name: image.path.split('/').pop() || 'image',
+    };
 
     return {
         resizedImage,

@@ -1,8 +1,5 @@
-// @ts-expect-error - auto-ts-ignore
-import hex from 'crypto-js/enc-hex';
-// @ts-expect-error - auto-ts-ignore
-import hmac from 'crypto-js/hmac-sha256';
-
+// import hex from 'crypto-js/enc-hex';
+// import hmac from 'crypto-js/hmac-sha256';
 import { type AccountResponse } from '@/shared/api/types/api.types';
 import { RegExpConstants } from '@/shared/lib/constants/regex.constants';
 
@@ -11,7 +8,7 @@ import {
     BASE_URL,
     BOARD_ID,
     EMAIL_DOMAIN,
-    SECRET_KEY,
+    // SECRET_KEY,
     WIDGET_PATH,
 } from '@/non-fsd/utils/voting-board/voting-board.constants';
 
@@ -24,7 +21,7 @@ export const getVotingBoardHtml = (url: string, account: Maybe<AccountResponse>)
 
     const name = `${account.last_name} ${account.first_name}`;
     const email = `${account.uuid}${EMAIL_DOMAIN}`;
-    const hash = hmac(email, SECRET_KEY).toString(hex);
+    // const hash = hmac(email, SECRET_KEY).toString(hex);
 
     const html = `
         <head>
