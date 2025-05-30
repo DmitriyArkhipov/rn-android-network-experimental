@@ -1,0 +1,35 @@
+import { type ParticipantByIdResponse, type PostShortResponse, type Tag } from '@/shared/api/types/api.types';
+
+export enum EmitterEvents {
+    // auth
+    UPDATE_TOKENS = 'UPDATE_TOKENS',
+    NO_USER = 'NO_USER',
+
+    MULTIPLE_TEXT_INPUT_FOCUSE = 'MULTIPLE_TEXT_INPUT_FOCUSE',
+    COMMENT_ANSWER = 'COMMENT_ANSWER',
+    REFRESH_LIST_ON_BLOCKED = 'REFRESH_LIST_ON_BLOCKED',
+    POST_CREATED = 'POST_CREATED',
+    POST_DELETED = 'POST_DELETED',
+    CHAT_ANSWER = 'CHAT_ANSWER',
+    POST_UPDATED = 'POST_UPDATED',
+    COMMENT_DELETED = 'COMMENT_DELETED',
+    SELECTED_TAB_PRESSED = 'SELECTED_TAB_PRESSED',
+    REPORT_OR_BLOCK = 'REPORT_OR_BLOCK',
+    REPORT_OR_BLOCK_TOAST = 'REPORT_OR_BLOCK_TOAST',
+    YOUR_COMMUNITY_DELETED = 'YOUR_COMMUNITY_DELETED',
+    NEW_P2P_MESSAGE_PUSH_ON_OPENED_CHAT = 'NEW_P2P_MESSAGE_PUSH_ON_OPENED_CHAT',
+    CANCEL_UPLOAD_IMAGE = 'CANCEL_UPLOAD_IMAGE',
+    NEW_POST_COMMENT = 'NEW_POST_COMMENT',
+
+    OPEN_JOB_SEARCH_CHECKLIST_BS = 'OPEN_JOB_SEARCH_CHECKLIST_BS',
+
+    FEED_TAB_DEEPLINK_UPDATE = 'FEED_TAB_DEEPLINK_UPDATE',
+}
+
+export type PostCreatedData = {
+    participant?: ParticipantByIdResponse['participants'];
+    tags: Array<Tag>;
+    communityId: string;
+    post?: PostShortResponse;
+    isRepost?: boolean;
+};

@@ -1,0 +1,18 @@
+export const RegExpConstants = {
+    hashtag: /(^|\s)(#[a-zA-Zа-яА-ЯёЁ\d-_]{2,30})/gi,
+    httpLink: /(^|\s)(http?:\/\/\S+)/i,
+    advancedHttpLink: /(\bhttps?:\/\/[a-zA-Z0-9+&@#/%?='()*$\-~_|!:,.;]*[a-zA-Z0-9+&@#/%=~_|])/gi,
+    anchorTag: /<a[^>]*>([^<]+)<\/a>/g,
+    hrefValue: /href="([^"]*)/,
+    anchorValue: /">(.*)<\/a>/,
+    votingBoardLink: '^https?://(set.ki/votingboard|votingboard-hh.prioplan.app/setka)',
+    markdownLink: /%5B(.*)%5D/,
+    uuidRegex: `([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})`,
+    subdomainRegex: '([a-zA-Z0-9-]*.)?',
+    lettersAndNumbersRegex: /^[a-zA-Zа-яА-ЯёЁ\d-]+$/gi,
+    testDomainRegex: `(https://api.stage-[a-z]+.setka.work)`,
+    letterOrNumberRequired: /[a-zA-Zа-яА-Я0-9]/,
+    lettersAndDashOnly: /^([a-zA-Zа-яА-ЯёЁ]+)(-[a-zA-Zа-яА-ЯёЁ]+)?$/,
+    nonSpace: /\S/,
+    hhUrl: `^https://([a-z]+\\.)?(hh.(ru|uz|ge|kg|kz|ua|az)|rabota.by)/`,
+};
