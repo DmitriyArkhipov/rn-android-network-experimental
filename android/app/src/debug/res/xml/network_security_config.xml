@@ -4,12 +4,14 @@
         <trust-anchors>
             <certificates src="system" />
             <certificates src="user" />
+            <certificates src="@raw/setka_ru"/>
         </trust-anchors>
     </debug-overrides>
     <base-config cleartextTrafficPermitted="true">
         <trust-anchors>
             <certificates src="system" />
             <certificates src="user" />
+            <certificates src="@raw/setka_ru"/>
         </trust-anchors>
     </base-config>
 </network-security-config>
