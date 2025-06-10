@@ -17,9 +17,13 @@ export const useRequest = () => {
 
             // console.log(axios.defaults.headers);
 
-            // axios.defaults.headers.common['User-Agent'] = 'TEST_ANDROID_USER_AGENT';
+            axios.defaults.headers.common['User-Agent'] = 'setka/1.0.0 Android';
 
             // const response = await axios.get('https://api.setka.ru/v1/suggest/country?text=', { timeout: 10000 });
+
+
+            const responseIP = await axios.get('https://ipv4.icanhazip.com/');
+            console.log(responseIP.data);
 
             const controller = new AbortController();
             const signal = controller.signal;
@@ -31,7 +35,7 @@ export const useRequest = () => {
             }, 100000);
 
             console.log('Starting request...');
-            const response = await axios.get('https://google.com', {
+            const response = await axios.get('https://api.setka.ru/v1/suggest/country?text=', {
                 signal
             });
             const endTime = Date.now();
