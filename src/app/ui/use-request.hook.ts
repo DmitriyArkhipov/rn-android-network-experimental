@@ -35,7 +35,7 @@ export const useRequest = () => {
             }, 100000);
 
             console.log('Starting request...');
-            const response = await axios.get('https://api.setka.ru/v1/suggest/country?text=', {
+            const response = await axios.get(`https://api.setka.ru/v1/suggest/country?text=${Date.now()}`, {
                 signal
             });
             const endTime = Date.now();
