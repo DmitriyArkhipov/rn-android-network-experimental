@@ -11,6 +11,8 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
+import com.facebook.react.modules.network.OkHttpClientProvider
+import com.rnnetworkexperimental.CustomOkHttpClient
 
 class MainApplication : Application(), ReactApplication {
 
@@ -35,6 +37,9 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+      // Заменяем клиент OkHttp
+    OkHttpClientProvider.setOkHttpClientFactory { CustomOkHttpClient.getClient() }
+
     SoLoader.init(this, OpenSourceMergedSoMapping)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
